@@ -2,6 +2,10 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+
+  images: {
+    domains: ["image.tmdb.org"],
+  },
 };
 
 export default nextConfig;
