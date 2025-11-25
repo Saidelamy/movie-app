@@ -51,7 +51,7 @@ export function MovieCard({ movie }) {
           </h3>
 
           <div className="flex items-center text-gray-600 dark:text-gray-400 text-sm mb-2">
-            {movie.release_date ? formatDate(movie.release_date) : "TBA"}
+            {formatDate(movie.release_date)}
           </div>
 
           <div className="flex items-center justify-between text-sm mb-3">
