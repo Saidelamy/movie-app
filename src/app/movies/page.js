@@ -5,14 +5,14 @@ import SearchMovie from "../components/SearchMovie";
 async function getMovies(page) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_MAIN_API_URL}/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_MAIN_API_KEY}&page=${page}`,
-    { next: { revalidate: 60 } }
+    { cache: "no-store" }
   );
   return res.json();
 }
 
 export default async function Page({ searchParams }) {
-  const promise = await searchParams;
-  const currentPage = Number(promise.page) || 1;
+  // const promise = await searchParams;
+  const currentPage = Number(searchParams.page) || 1;
   const moviesData = await getMovies(currentPage);
   console.log(moviesData);
 
